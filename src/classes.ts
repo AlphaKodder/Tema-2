@@ -21,6 +21,7 @@ class Student{
 }
 
 class Grade {
+    public id:string;
     public studentId:string;
     public subjectName:string;
     public grade:number;
@@ -30,6 +31,7 @@ class Grade {
         this.studentId = studentId;
         this.subjectName = subjectName;
         this.grade = grade;
+        this.id = uniqueIdFunc();
     }
 }
 
