@@ -23,7 +23,7 @@ async function writeGradesToFile():Promise<void>{
 
 async function populateData():Promise<void>{
     try{
-        let result:Array<Student>  = JSON.parse(fs.readFileSync("./studentsData/students.json",'utf-8'));
+        let result:Array<Student>  = JSON.parse( await fs.readFileSync("./studentsData/students.json",'utf-8'));
         for(let i=0;i<result.length;i++)
         {
             studentsList.push(result[i]);
@@ -35,7 +35,7 @@ async function populateData():Promise<void>{
     }
 
     try{
-        let result:Array<Grade>  = JSON.parse(fs.readFileSync("./studentsData/grades.json",'utf-8'));
+        let result:Array<Grade>  = JSON.parse(await fs.readFileSync("./studentsData/grades.json",'utf-8'));
         for(let i=0;i<result.length;i++)
         {
             gradesList.push(result[i]);
